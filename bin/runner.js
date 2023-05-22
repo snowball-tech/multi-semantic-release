@@ -19,6 +19,10 @@ export default async (cliFlags) => {
 
 		if (flags.debug) {
 			require("debug").enable("msr:*");
+
+			if (flags.verbose) {
+				require("debug").enable("semantic-release:*");
+			}
 		}
 
 		if (!flags.silent) {
